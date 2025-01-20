@@ -34,3 +34,9 @@ test
 tmp
 Build
 /.vs
+
+# ========== #
+# User added #
+# ========== #
+*.csproj
+*.sln
