@@ -38,5 +38,5 @@ Build
 # ========== #
 # User added #
 # ========== #
-*.csproj
-*.sln
+/*.csproj
+/*.sln
