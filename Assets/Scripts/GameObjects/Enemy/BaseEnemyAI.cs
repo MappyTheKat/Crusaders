@@ -52,6 +52,9 @@ public class BaseEnemyAI : MonoBehaviour
                 return;
         }
 
+        if (EnemyState == EnemyState.Dead)
+            return;
+
         if (EnemyState == EnemyState.None)
         {
             StartCoroutine(StartAICoroutine());
@@ -372,7 +375,9 @@ public class BaseEnemyAI : MonoBehaviour
         {
             yield return null;
         }
-        EnemyState = EnemyState.None;
+
+        // 죽은 상태에서는 컨트롤을 더이상 하지 않는다.
+        EnemyState = EnemyAction.IsDead ? EnemyState.Dead : EnemyState.None;
     }
 
     // 플레이어가 범위 안에 있는지 판단하는 함수.
@@ -414,4 +419,5 @@ public enum EnemyState
     Negate,     // 플레이어와 멀어지기 (원거리 AI용).
     Hit,        // 피격 상태.
     Down,       // 다운 중.
+    Dead,       // 죽음(죽음 애니메이션중)
 }

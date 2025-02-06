@@ -24,7 +24,13 @@ public class CharacterAction : MonoBehaviour
     [Tooltip("Airborne vector when death")]
     public Vector2 DeathVector;
 
-    public bool IsDead = false;
+    private bool isDead = false;
+
+    public bool IsDead
+    {
+        get { return isDead; }
+        private set { isDead = value; }
+    }
 
     void Awake()
     {
@@ -90,6 +96,7 @@ public class CharacterAction : MonoBehaviour
         }
         ChildObject.SendMessage("OnAirborne");
         ChildObject.SendMessage("OnDeath");
+        IsDead = true;
     }
 
     public void Airborne(Vector2 airborneVector)
