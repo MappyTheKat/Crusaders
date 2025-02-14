@@ -3,6 +3,7 @@
 # =============== #
 Temp/
 Library/
+Logs/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -17,6 +18,7 @@ obj/
 *.unityproj
 *.booproj
 /ProjectSettings/UnityConnectSettings.asset
+.vsconfig
 
 # ============ #
 # OS generated #
@@ -38,5 +40,5 @@ Build
 # ========== #
 # User added #
 # ========== #
-/*.csproj
-/*.sln
+*.csproj
+*.sln
