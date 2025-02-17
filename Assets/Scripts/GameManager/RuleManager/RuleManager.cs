@@ -15,8 +15,17 @@ public class RuleManager : MonoBehaviour
     public List<WaveManager> Waves;
     public List<BoxCollider2D> Blockades;
 
-	// Use this for initialization
-	IEnumerator Start ()
+    // 타겟 프레임레이트 : 임시로 일단 여기에 둠
+    const int targetFrameRate = 60;
+
+    private void Awake()
+    {
+        // 타겟 프레임레이트 설정 : 임시로 일단 여기에 둠
+        Application.targetFrameRate = targetFrameRate;
+    }
+
+    // Use this for initialization
+    IEnumerator Start ()
     {
         PlayerSpawner = GameObject.Find("PlayerSpawner");
         // 파일로 스크립트를 만들수 있도록 해야하는데 일단 여기서 쌩으로 처리한다.
